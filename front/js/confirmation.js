@@ -1,8 +1,6 @@
-function main(){
-    const idNode = document.getElementById("orderId");
-    idNode.innerText = localStorage.getItem("orderId");
-    console.log(localStorage.getItem("orderId"))
+function deleteCommand() {
+    const orderId = document.getElementById("orderId");
+    orderId.innerHTML = localStorage.getItem("orderId");
     localStorage.clear();
 }
-
-main();
+deleteCommand();

@@ -48,7 +48,7 @@ fetch('http://localhost:3000/api/products')
                           <div class="cart__item__content__settings">
                             <div class="cart__item__content__settings__quantity">
                               <p>Qté : </p>
-                              <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="${products.quantity}">
+                              <input type="number" class="itemQuantity" name="itemQuantity" min=0 max=100 value="${products.quantity}">
                             </div>
                             <div class="cart__item__content__settings__delete">
                               <p class="deleteItem">Supprimer</p>
@@ -92,13 +92,12 @@ fetch('http://localhost:3000/api/products')
                     for (let moreLess = 0; moreLess < kanapQuantity.length; moreLess++) {
                       kanapQuantity[moreLess].addEventListener("change", (event) => {
                         event.preventDefault();
-                        
-                        var input = event.target
                         //Ici on vérifie que les valeurs ne dépasse pas 100 ou ne passent pas en dessous de 0
-                        if (isNaN(input.value) || input.value <=0 || input.value >100){
+                        var input = event.target
+                         {if (isNaN(input.value) || input.value <=0 || input.value >100){
                           input.value = 1
                           alert ('Veuillez choisir un numéro entre 1 et 100')
-                        return}
+                        return}}
                         
                         let newQuantity = kanapQuantity[moreLess].value;                         
                         const localStorageModify = {

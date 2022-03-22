@@ -52,15 +52,11 @@ const customerColor = document.getElementById ("colors");
 const addBasket = document.getElementById("addToCart");
 
     addBasket.addEventListener ("click", (event) => {
-        // Permet de vérifier qu'il y a un chiffre compris entre 1 et 100
-        if (quantity.value <= 0 || quantity.value >100){
-            alert ('Veuillez saisir un nombre entre 1 et 100')
-            return}
-            // Permet de vérifier qu'il y a une couleur de séléctionner
-            if (!colors.value) {
-                alert ('Veuillez séléctionner une couleur.')
-                return
-            }
+        // Permet de vérifier qu'une Couleur est séléctionnée
+        if (!colors.value) return (alert ('Aucune couleur séléctionnée'))
+        // Permet de mettre au panier une quantitée comprise entre 1 à 100
+        if (quantity.value > 0 && quantity.value <= 100 && quantity.value != 0){
+
         // Information sur le produit pour le panier à stocker
     const productInfomationOfCart = {
         id: productId,
@@ -97,20 +93,15 @@ if (productLocalStorage) {
 productLocalStorage.forEach (function (chosenProduct, key) {      
     // Si le produit commandé est déjà dans le panier 
     if (chosenProduct.id == productId && chosenProduct.color == customerColor.value) {
-        productLocalStorage[key].quantity = parseInt(chosenProduct.quantity) + parseInt(productQuantity.value);{
-       };
-
+        productLocalStorage[key].quantity = parseInt(chosenProduct.quantity) + parseInt(productQuantity.value);
+        // On vérifie qu'il n'y a pas déjà 100 éléments de cet article dans le panier 
+        if (productLocalStorage[key].quantity <= 100)
+        localStorage.setItem("product", JSON.stringify(productLocalStorage));
         update = true;
-        {
-            //Controle du nombre de Canapé dans le panier
-    if (productLocalStorage[key].quantity > 100){
-        alert (`Vous avez déjà 100 ${titleProducts.textContent} dans votre panier`)}  event.preventDefault(); return}}
-    else
-    localStorage.setItem("product", JSON.stringify(productLocalStorage));
         addConfirm();
         
     }
-);
+});
     // Si le produit ne se trouve pas dans le panier
     if (!update) {
         addProductLocalStorage();
@@ -124,4 +115,7 @@ productLocalStorage = [];
 addProductLocalStorage();
 addConfirm();
 }}
-);
+else{
+  alert("Nombre d'article insuffisant. Veuillez choisir une quantité comprise entre 1 à 100.")
+}
+});

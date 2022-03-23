@@ -261,7 +261,7 @@ function postForm() {
         })
             .then(response => response.json())
               .then((data) => {             
-              localStorage.setItem("orderId", data.orderId);
+                
 
                 if (validForm()) {
                   document.location.href = 'confirmation.html?id='+ data.orderId

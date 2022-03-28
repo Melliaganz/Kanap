@@ -261,7 +261,7 @@ function postForm() {
         })
             .then(response => response.json())
               .then((data) => {             
-                
+
 
                 if (validForm()) {
                   document.location.href = 'confirmation.html?id='+ data.orderId

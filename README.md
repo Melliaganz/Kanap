@@ -1,4 +1,8 @@
 # Kanap #
+## Projet n°5 d'OpenClassroom ##
+### Construisez un site e-commerce en JavaScript ###
+
+![ScreenshotKanap](kanap.png)
 
 This is the front end and back end server for Project 5 of the Web Developer path.
 

@@ -2,7 +2,7 @@ fillSection();
 
 // Récupération des articles de l'API
 async function getArticles() {
-    var articlesCatch = await fetch("https://kanaplucas-a36a99905316.herokuapp.com/api/products")
+    var articlesCatch = await fetch("https://kanaplucas-a36a99905316.herokuapp.com/api/products/")
     return await articlesCatch.json();
 }
 

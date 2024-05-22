@@ -17,7 +17,7 @@ async function fillSection() {
             // Insertion de l'élément "a"
             let productLink = document.createElement("a");
             document.querySelector(".items").appendChild(productLink);
-            productLink.href = `/front/html/product.html?id=${resultatAPI[article]._id}`;
+            productLink.href = `./html/product.html?id=${resultatAPI[article]._id}`;
 
             // Insertion de l'élément "article"
             let productArticle = document.createElement("article");

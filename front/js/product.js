@@ -17,7 +17,7 @@ const descriptionProducts = document.getElementById("description");
 const colors = document.getElementById("colors")
 
 // Insertion du produit séléctionner
-fetch("https://kanaplucas-a36a99905316.herokuapp.com/api/products/" + productId)
+fetch("https://kanap-8bce.onrender.com/api/products/" + productId)
    .then(response => response.json())
         .then(dataBase => {
             // Chargement du nom de chaque produit au niveau de l'onglet

@@ -18,7 +18,7 @@ cartEmpty();
 // Function si le local storage n'est pas vide //
 function goCart() {
 // Appel de l'API //
-fetch('https://kanaplucas-a36a99905316.herokuapp.com/api/products')
+fetch('https://kanap-8bce.onrender.com/api/products')
 // Promesse 1 : Récupération de la response pour la convertir en JSON //
   .then (response => response.json())
         // Promesse 2 : Affiche les data du serveur //
@@ -252,7 +252,7 @@ function postForm() {
           products,
         }
         
-        fetch ("https://kanaplucas-a36a99905316.herokuapp.com/api/products/order", {
+        fetch ("https://kanap-8bce.onrender.com/api/products/order", {
           method: "POST",
           headers: {
           "Content-type": "application/json"
